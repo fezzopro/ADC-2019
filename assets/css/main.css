@@ -200,6 +200,34 @@ body{
 .left-nav ul li img{
 	width: inherit;
 }
+::-ms-scrollbar{
+	border-radius: 4px;
+	width: 8px;
+}
+::-ms-thumb{
+	border-radius: 4px;
+	width: 8px;
+}
+::-moz-progress-bar{
+	border-radius: 4px;
+	width: 8px;
+}
+::-moz-progress-bar:hover{
+	background: #ff516b;
+	background: -moz-linear-gradient(-45deg, #ff516b 0%, #826cfd 100%);
+	background: -webkit-linear-gradient(-45deg, #ff516b 0%,#826cfd 100%);
+	background: linear-gradient(135deg, #ff516b 0%,#826cfd 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff516b', endColorstr='#826cfd',GradientType=1 );
+	border-radius: 4px;
+}
+::-ms-thumb:hover{
+	background: #ff516b;
+	background: -moz-linear-gradient(-45deg, #ff516b 0%, #826cfd 100%);
+	background: -webkit-linear-gradient(-45deg, #ff516b 0%,#826cfd 100%);
+	background: linear-gradient(135deg, #ff516b 0%,#826cfd 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff516b', endColorstr='#826cfd',GradientType=1 );
+	border-radius: 4px;
+}
 ::-webkit-scrollbar {
 	/*background: red;*/
 	border-radius: 4px;
