@@ -67,7 +67,7 @@ body{
     background-color: #fff;
 	padding: 2%;
 	grid-template-columns: 100%;
-	grid-template-rows: 20% 75%;
+	grid-template-rows: 25% 70%;
     grid-gap: 5%;
 }
 .footer {
@@ -413,6 +413,12 @@ input{
 }
 .below-boxes{
     grid-template-rows: 10% 10%;
+}
+div.home-below-top-boxes{
+	grid-template-columns: 30% 30% 30%;
+	/*grid-template-rows: 40% auto;*/
+	/*grid-row-gap: auto;*/
+	grid-column-gap: 3%;
 }
 div.below-boxes.grid p{
 	text-align: center;
