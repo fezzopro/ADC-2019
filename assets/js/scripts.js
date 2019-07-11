@@ -17,4 +17,6 @@ document.addEventListener('DOMContentLoaded',()=>{
 	    }
 	  }
 	});
+	document.querySelector('.footer-date').textContent = new Date().getFullYear();
+	// <script type="text/javascript">document.write(new Date().getFullYear());</script>
 });
