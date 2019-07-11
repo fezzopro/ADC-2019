@@ -205,7 +205,7 @@ body{
 
 }
 .login-content {
-	grid-template-rows: 10% 20% 60% 10%;
+	grid-template-rows: 10% 25% 60% 5%;
     padding: 2%;
 }
 .login-head {
