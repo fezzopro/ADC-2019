@@ -422,6 +422,9 @@ div.below-boxes.grid p{
     font-weight: 100;
     font-style: italic;
 }
+div.below-boxes.grid p span{
+	font-size: 14px;
+}
 @media only screen and (max-device-width: 319px) {
     .right-header ul li span {
 	    display: none;
