@@ -368,6 +368,9 @@ input{
 .end-icons{
 	text-align: end;
 }
+.end-icons img{
+	height: 7px;
+}
 .top-boxes div a span{
 	padding-left: 5%;
 }
@@ -403,6 +406,10 @@ input{
     background: -moz-linear-gradient(-45deg, #ff253a 0%, #ff8453 100%);
     background: -webkit-linear-gradient(-45deg, #ff253a 0%,#ff8453 100%);
     background: linear-gradient(135deg, #ff253a 0%,#ff8453 100%);
+}
+.title-icon img{
+	width: 60px;
+	opacity: .2;
 }
 .below-boxes{
     grid-template-rows: 10% 10%;
