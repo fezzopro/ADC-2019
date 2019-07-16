@@ -4,15 +4,15 @@
   "description": "ADC Way Farer 2019",
   "main": "app.js",
   "scripts": {
-    "test-init": "./node_modules/jasmine/bin/jasmin.js init",
-    "test": "./node_modules/jasmine/bin/jasmin.js"
+    "test-init": "./node_modules/jasmine/bin/jasmine.js init",
+    "test": "./node_modules/jasmine/bin/jasmine.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fezzopro/ADC-2019.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "KAMANA Felix",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fezzopro/ADC-2019/issues"
