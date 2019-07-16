@@ -1,0 +1,24 @@
+{
+  "name": "ADC-2019",
+  "version": "1.0.0",
+  "description": "ADC Way Farer 2019",
+  "main": "app.js",
+  "scripts": {
+    "test-init": "./node_modules/jasmine/bin/jasmin.js init",
+    "test": "./node_modules/jasmine/bin/jasmin.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fezzopro/ADC-2019.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fezzopro/ADC-2019/issues"
+  },
+  "homepage": "https://github.com/fezzopro/ADC-2019#readme",
+  "devDependencies": {
+    "jasmine": "^3.4.0"
+  }
+}
