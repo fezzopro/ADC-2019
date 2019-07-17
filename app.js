@@ -1,4 +1,8 @@
 class WayFarer{
-    
+    constructor(){
+    }
+    add(a, b){
+        return a+b;
+    }
 }
-module.export = new WayFarer();
+module.exports = new WayFarer();
