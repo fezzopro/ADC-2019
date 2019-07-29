@@ -12,7 +12,10 @@ class WayFarer{
             return false;
         }
     }
-    signup(firstname,lastname,email,dob,username,password){}
+    signup(data){
+        // let [firstname,lastname,email,dob,username,password,rpassword] = data;
+        return data;
+    }
     createTrip(params = []){}
     cancelTrip(userId = this.userId, tripId){}
     viewTrip(userId = this.userId, tripId=all){}

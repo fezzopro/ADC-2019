@@ -6,6 +6,7 @@
             "first_name" : "Felix",
             "last_name" : "KAMANA",
             "passwor" : "password",
+            "dob" : "2019-07-20",
             "is_admin" : "true"
         }
     },

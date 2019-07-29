@@ -18,7 +18,6 @@ app.get("/", (request, response) =>{
 });
 app.post("/auth/signin", (request, response)=>{
     if (WayFarer.signin(request.body.username, request.body.password)) {
-
         response.send('greate');
         console.log(request.params);
         
@@ -29,7 +28,12 @@ app.post("/auth/signin", (request, response)=>{
     response.end();
 })
 app.post("/auth/signup",(request, response)=>{
-    response.send(request.params);
+    let user = {"userID": 5}
+    if (request.body !=={}) {
+        console.log(WayFarer.signup((request.body)));
+    }
+    response.send(request.body);
+
 })
 app.get("/index", (request, response) =>{
     response.sendFile("index.html",{root: path.join(__dirname, './views')});
