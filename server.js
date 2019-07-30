@@ -1,5 +1,5 @@
 const Express = require("express");
-const WayFarer = require("./app");
+const WayFarer = require("./server/app");
 
 const app = new Express();
 
