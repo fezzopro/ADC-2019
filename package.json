@@ -20,9 +20,11 @@
   "homepage": "https://github.com/fezzopro/ADC-2019#readme",
   "devDependencies": {
     "eslint": "^6.0.1",
-    "jasmine": "^3.4.0"
+    "jasmine": "^3.4.0",
+    "nodemon": "^1.19.1"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
   }
 }
