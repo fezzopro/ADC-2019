@@ -2,7 +2,7 @@
   "name": "adc-2019",
   "version": "1.0.0",
   "description": "ADC Way Farer 2019",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test-init": "./node_modules/jasmine/bin/jasmine.js init",
     "test": "./node_modules/jasmine/bin/jasmine.js"
