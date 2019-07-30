@@ -1,6 +1,6 @@
 const Express = require("express");
 const path = require("path");
-const WayFarer = require("./app");
+const WayFarer = require("./server/app");
 
 // const bodyParser = require("body-parser");
 
