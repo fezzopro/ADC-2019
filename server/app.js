@@ -6,7 +6,7 @@ class WayFarer{
         return a+b;
     }
     signin(username, password){
-        if (username == 'fezzopro@gmail.com' && password == 'Afrodis1') {
+        if (username == 'fezzopro@gmail.com' && password == 'password') {
             return true;
         }else{
             return false;
