@@ -6,7 +6,7 @@ describe("Addition Function", ()=>{
     });
     describe("Functions Related To User Authentication",()=>{
         let username = 'fezzopro@gmail.com';
-        let password = 'Afrodis1';
+        let password = 'password';
         it("Check Sign-in information", ()=>{
             expect(app.signin(username,password)).toBe(true);
         });
