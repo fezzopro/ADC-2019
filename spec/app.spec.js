@@ -1,4 +1,4 @@
-const app = require("../app");
+const app = require("../server/app");
 
 describe("Addition Function", ()=>{
     it("Addint two numbers A and B to be Z", ()=>{
