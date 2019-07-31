@@ -1,3 +1,4 @@
+// Our task Handling Class 
 class WayFarer{
     constructor(){
         this.userId = null;
@@ -6,7 +7,7 @@ class WayFarer{
         return a+b;
     }
     signin(username, password){
-        if (username == 'fezzopro@gmail.com' && password == 'password') {
+        if (username === 'fezzopro@gmail.com' && password === 'password') {
             return true;
         }else{
             return false;
