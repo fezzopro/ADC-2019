@@ -1,4 +1,3 @@
-// Our task Handling Class 
 class WayFarer{
     constructor(){
         this.userId = null;
@@ -31,4 +30,5 @@ class WayFarer{
     }
 }
 // console.log()
+
 module.exports = new WayFarer();
