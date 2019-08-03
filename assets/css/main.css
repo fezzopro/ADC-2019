@@ -17,6 +17,9 @@ body{
     grid-template-columns: 100%;
     grid-template-rows: 100%;
 }
+div{
+	display: grid;
+}
 .wrapper {
 	background-color: #eee;
 	margin:  auto;
