@@ -502,6 +502,7 @@ div.below-boxes.grid p span{
 		grid-template-columns: auto auto;
 	}
 	.box1, .box2, .box3, .box4 {
+		display: grid;
 	    border-radius: 5px;
 	    box-shadow: 2px 3px 7px 5px rgba(160, 157, 157, 0.5);
 	    padding-bottom: 5px !important;
@@ -582,6 +583,7 @@ div.below-boxes.grid p span{
 		grid-template-columns: auto auto;
 	}
 	.box1, .box2, .box3, .box4 {
+		display: grid;
 	    border-radius: 5px;
 	    box-shadow: 2px 3px 7px 5px rgba(160, 157, 157, 0.5);
 	    padding-bottom: 5px !important;
@@ -674,6 +676,7 @@ div.below-boxes.grid p span{
 		grid-template-columns: auto auto;
 	}
 	.box1, .box2, .box3, .box4 {
+		display: grid;
 	    border-radius: 5px;
 	    box-shadow: 2px 3px 7px 5px rgba(160, 157, 157, 0.5);
 	    padding-bottom: 5px !important;
@@ -756,6 +759,7 @@ div.below-boxes.grid p span{
 		grid-template-columns: auto auto;
 	}
 	.box1, .box2, .box3, .box4 {
+		display: grid;
 	    border-radius: 5px;
 	    box-shadow: 2px 3px 7px 5px rgba(160, 157, 157, 0.5);
 	    padding-bottom: 5px !important;
