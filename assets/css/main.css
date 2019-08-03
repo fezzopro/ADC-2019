@@ -379,6 +379,7 @@ input, select{
 	padding-left: 5%;
 }
 .box1, .box2, .box3, .box4{
+	display: grid;
     border-radius: 5px;
     grid-template-rows: 80% 20%;
     box-shadow: 2px 3px 7px 5px rgba(160, 157, 157, 0.5);
