@@ -20,4 +20,4 @@ At this moment, only the user interface is full functionning, as well as few API
 
 # Links
 ### Fro the User Interface
-fezzopro.github.io/ADC-2019
+https://fezzopro.github.io/ADC-2019
