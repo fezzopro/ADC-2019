@@ -41,26 +41,6 @@
             "id": 4
         },
         {
-            "first_name": "Aphrodice",
-            "last_name": "IRYIVUZE",
-            "email": "iryiri@gmail.com",
-            "username": "iryiri@gmail.com",
-            "password": "1234",
-            "is_admin": "no",
-            "status": "active",
-            "id": 5
-        },
-        {
-            "first_name": "Jules",
-            "last_name": "UWINEZA",
-            "email": "jules@gmail.com",
-            "username": "jules@gmail.com",
-            "password": "1234",
-            "is_admin": "no",
-            "status": "active",
-            "id": 6
-        },
-        {
             "first_name": "Jules",
             "last_name": "UWINEZA",
             "email": "jules@gmail.com",
@@ -69,6 +49,16 @@
             "is_admin": "no",
             "status": "active",
             "id": 7
+        },
+        {
+            "first_name": "paste",
+            "last_name": "MUKAMA",
+            "username": "pmukam32@gmail.com",
+            "email": "pmukam32@gmail.com",
+            "password": "1234675",
+            "is_admin": "no",
+            "status": "active",
+            "id": 6
         }
     ],
     "bookings": [

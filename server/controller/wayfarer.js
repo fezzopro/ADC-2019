@@ -2,11 +2,12 @@ class WayFarer{
     constructor(){
         this.fs = require("fs");
         this.path = require("path");
+        this.fileLocation = this.path.join(__dirname,"../models/data.json");
         this.userId = null;
         this.tripID = null;
         this.bookingId = null;
         this. fileContent = [];
-        this.fs.readFile(this.path.join(__dirname,"../models/data.json"),(error, data_)=>{
+        this.fs.readFile(this.fileLocation,(error, data_)=>{
             if (error) throw error;
             this.fileContent = JSON.parse(data_)
             console.log('data loaded');
@@ -16,29 +17,43 @@ class WayFarer{
         return this.fileContent;
     }
     signin(username, password){
-        if (username === 'fezzopro@gmail.com' && password === 'password') {
-            return true;
-        }else{
-            return false;
-        }
+        let userData = {};
+        this.fileContent.users.map((user)=>{
+            if (user.username === username && user.password === password) {
+                userData.status= "success"; 
+                userData.data= user;
+            }
+        });
+        return userData;
     }
     signup(data){
-
+        let result = true;
         // Get All Available Users
         let allUsers = this.fileContent.users;
         // Change data id to be the next inline
         data.id = allUsers.length + 1;
-        console.log(data);
         // Push our signup object to the array
         this.fileContent.users.push(data);
         // Write to the file information abaout the user
-        this.fs.writeFile(this.path.join(__dirname,"../models/data.json"),JSON.stringify(this.fileContent),'utf8',(error)=>{
-            if (error) {
-                return error;
+        this.fs.writeFileSync(this.fileLocation,JSON.stringify(this.fileContent),'utf8',(error)=>{
+            if (!error) {
+                result = true;
             }else {
-                return JSON.stringify(data);
+                console.log(error);
+                throw error;
             }
         });
+        
+        return result;
+    }
+    userExist(username){
+        let results = false;
+        this.fileContent.users.map(individualUser=>{
+            if (individualUser.username === username) {
+                results = true;
+            }
+        });
+        return results;
     }
     createTrip(params = []){
         // Write on the file information about the trip
