@@ -344,10 +344,10 @@ input, select{
 	margin-right: 10%;
 	color: white;
 	line-height: 20px;
-	overflow-wrap: unset;
+	overflow-wrap: inherit;
 	text-size-adjust:100%;
 	font-family: sans-serif;
-	font-weight: 400;
+	font-weight: 600;
 }
 .top-boxes div div{
 	display: grid;
@@ -360,7 +360,7 @@ input, select{
 	text-decoration: none;
 	/*padding-top: 10%;*/
 	font-size: 12px;
-	font-weight: 200;
+	font-weight: 400;
     font-stretch: extra-condensed;
     grid-template-columns: 80% 20%;    
     background-color: rgba(0,0,0,.03);
@@ -390,9 +390,12 @@ input, select{
 .box2{
 	border-color: transparent !important;
     background: #ffc107;
-    background: -moz-linear-gradient(-45deg, #ffc107 1%, #fffc07 100%);
-    background: -webkit-linear-gradient(-45deg, #ffc107 1%,#fffc07 100%);
-    background: linear-gradient(135deg, #ffc107 1%,#fffc07 100%);
+    /* background: -moz-linear-gradient(-45deg, #ffc107 1%, #fffc07 100%); */
+    background: -moz-linear-gradient(-45deg, #daad25 1%, #fffc00b8 100%);
+    /* background: -webkit-linear-gradient(-45deg, #ffc107 1%,#fffc07 100%); */
+    background: -webkit-linear-gradient(-45deg, #daad25 1%,#fffc00b8 100%);
+	/* background: linear-gradient(135deg, #ffc107 1%,#fffc07 100%); */
+	background: linear-gradient(135deg, #daad25 1%,#fffc00b8 100%);
 }
 .box3{
 	border-color: transparent !important;
@@ -425,7 +428,7 @@ div.below-boxes.grid p{
 	text-align: center;
 	text-size-adjust: 100%;
     font-size: 18px;
-    margin-bottom: 0px;
+    margin-top: 0px;
     font-weight: 100;
     font-style: italic;
 }
@@ -488,10 +491,10 @@ div.below-boxes.grid p span{
 		line-height: 15px;
 		/*text-size-adjust:100%;*/
 		font-family: sans-serif;
-		font-weight: 400;
+		font-weight: 600;
 		line-height: 15px;
-		overflow-inline: scroll;
-		overflow-wrap: anywhere;
+		/* overflow-inline: scroll; */
+		overflow-wrap: inherit;
 	}
 	.top-boxes div div {
 		grid-template-columns: 80% 20%;
@@ -568,10 +571,10 @@ div.below-boxes.grid p span{
 		line-height: 15px;
 		/*text-size-adjust:100%;*/
 		font-family: sans-serif;
-		font-weight: 400;
+		font-weight: 600;
 		line-height: 15px;
-		overflow-inline: scroll;
-		overflow-wrap: anywhere;
+		/* overflow-inline: inherit; */
+		overflow-wrap: inherit;
 	}
 	.top-boxes div div {
 		grid-template-columns: 80% 20%;
@@ -660,10 +663,10 @@ div.below-boxes.grid p span{
 		line-height: 15px;
 		/*text-size-adjust:100%;*/
 		font-family: sans-serif;
-		font-weight: 400;
+		font-weight: 600;
 		line-height: 15px;
-		overflow-inline: scroll;
-		overflow-wrap: anywhere;
+		/* overflow-inline: scroll; */
+		overflow-wrap: inherit;
 	}
 	.top-boxes div div {
 		grid-template-columns: 80% 20%;
@@ -742,10 +745,10 @@ div.below-boxes.grid p span{
 		line-height: 15px;
 		/*text-size-adjust:100%;*/
 		font-family: sans-serif;
-		font-weight: 400;
+		font-weight: 600;
 		line-height: 15px;
-		overflow-inline: scroll;
-		overflow-wrap: anywhere;
+		/* overflow-inline: scroll; */
+		overflow-wrap: inherit;
 	}
 	.top-boxes div div {
 		grid-template-columns: 80% 20%;

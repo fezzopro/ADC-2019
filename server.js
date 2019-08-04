@@ -1,10 +1,11 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const WayFarer = require("./server/wayfarer");
-const app = require("./server/routes");
+const WayFarer = require("./server/controller/wayfarer");
+const app = require("./server/routes/routes");
 
-//Make our html pages available for express to use available 
+// Make our html pages available for express to use available 
+// By using express middleware
 app.use('/assets',express.static(`${__dirname}/views`));
 app.use(express.urlencoded());
 app.use(express.json());
@@ -36,6 +37,9 @@ app.get("/allbooking", (request, response, next) =>{
 app.get("/bookings", (request, response, next) =>{
     response.sendFile("booking.html",{root: path.join(__dirname, './views')});
 });
+app.get("/alltrips", (request, response, next) =>{
+    response.sendFile("alltrips.html",{root: path.join(__dirname, './views')});
+});
 app.get("/createtrips", (request, response, next) =>{
     response.sendFile("createtrips.html",{root: path.join(__dirname, './views')});
 });
@@ -52,8 +56,10 @@ app.get("/logout/", (request, response, next) =>{
 app.use((request, response, next)=>{
     let error = new Error('Not Found');
     error.status = 404;
+    next(error);
     
 })
+// And we handle the previous error as well as other errors
 app.use((error, request, response, next)=>{
     response.status(error.status || 500);
     response.json({

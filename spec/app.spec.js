@@ -1,14 +1,14 @@
-const app = require("../server/app");
+const app = require("../server/controller/wayfarer");
 
 describe("Addition Function", ()=>{
-    it("Addint two numbers A and B to be Z", ()=>{
-        expect(app.add(5,10)).toEqual(15);
-    });
     describe("Functions Related To User Authentication",()=>{
         let username = 'fezzopro@gmail.com';
         let password = 'password';
         it("Check Sign-in information", ()=>{
             expect(app.signin(username,password)).toBe(true);
+        });
+        it("Check Sign-in information", ()=>{
+            expect(password.length > 3).toBe(true);
         });
 
         it("Check Sign-up information", ()=>{
