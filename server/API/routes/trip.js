@@ -1,30 +1,51 @@
 const express = require("express");
 const WayFarer = require("../../controller/wayfarer");
+const BodyChecker = require("../../helpers/requestBodies");
 const route = express.Router();
 
 
-// route.use(express.json());
 
 // trip routes
 
 // Create trip
-route.post("/",(req, res, next)=>{
-    res.status(201).json({status:"Success", data: req.body})
-    res.end();
+route.post("/",(request, response, next)=>{
+
+    let results = BodyChecker.checkCreateTripBody(request.body);
+    if (results.status) {
+        // check if a trip already Exists
+        if(WayFarer.tripExist(request.body)){
+            response.status(200).json({status:"Failed", message:"Trip Already Exists"});
+        }else{
+            if (WayFarer.createTrip(request.body)) {
+                response.status(201).json({status:"success",data: request.body});
+            } else {
+                response.status(201).json({status:"Failed",message: "Unable To save Your trip. Please try again later"});
+            }
+        }
+    }else{
+        response.status(401).json({error: "Incomplete or Empty data",data:results.data});
+    }
+    response.end();
 });
 
 // Get all trips.
-route.get("/",(req, res, next)=>{
+route.get("/",(request, response, next)=>{
     let trips = WayFarer.viewTrip(1);
-    res.status(200).json(trips);
+    response.status(200).json(trips);
 });
 
 // Get a specific trip.
-route.get("/:trip_id",(req, res, next)=>{
-    let trip_id = req.params.trip_id;
+route.get("/:trip_id",(request, response, next)=>{
+    let trip_id = request.params.trip_id;
     
     let trips = WayFarer.viewTrip(1,trip_id);
-    res.status(200).json(trips);
+    if (trips.data.length > 0) {
+        response.status(302).json(trips);
+        
+    } else {
+        response.status(204).json(trips);
+        
+    }
 
 });
 

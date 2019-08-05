@@ -1,7 +1,7 @@
 const express = require("express");
 const WayFarer = require("../../controller/wayfarer");
 const route = express.Router();
-// route.use(express.json());
+
 // Book a seat on a trip
 
 route.post("/", (req, res, next)=>{
@@ -12,13 +12,28 @@ route.post("/", (req, res, next)=>{
 
 route.get("/", (req, res, next)=>{
     let fileContent = WayFarer.viewBooking(1);
-    res.status(200).json(fileContent);
+    if (fileContent.data.length > 0) {
+        // Set Content Found status
+        res.status(302).json(fileContent);
+        
+    } else {
+        // No content status
+        res.status(204).json(fileContent);
+        
+    }
 })
 
 // Get A Specific Booking Informations
 route.get("/:booking_id", (req, res, next)=>{
     let fileContent = WayFarer.viewBooking(1,req.params.booking_id);
-    res.status(200).json(fileContent);
+    if (fileContent.data.length > 0) {
+        // Set Content Found status
+        res.status(302).json(fileContent);
+    } else {
+        // No content status
+        res.status(204).json(fileContent);
+        
+    }
 })
 
 // Delete a booking.

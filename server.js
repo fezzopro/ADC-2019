@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
-const bodyParser = require("body-parser");
-const WayFarer = require("./server/controller/wayfarer");
+// const bodyParser = require("body-parser");
+// const WayFarer = require("./server/controller/wayfarer");
 const app = require("./server/routes/routes");
 
 // Make our html pages available for express to use available 
@@ -34,7 +34,7 @@ app.get("/allbooking", (request, response, next) =>{
     response.sendFile("allbooking.html",{root: path.join(__dirname, './views')});
 });
 // View all bookings
-app.get("/bookings", (request, response, next) =>{
+app.get("/booking", (request, response, next) =>{
     response.sendFile("booking.html",{root: path.join(__dirname, './views')});
 });
 app.get("/alltrips", (request, response, next) =>{

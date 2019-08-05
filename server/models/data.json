@@ -1,64 +1,106 @@
 {
     "users": [
         {
-            "id": "1",
+            "first_name": "Charles",
+            "last_name": "RUGA",
+            "username": "charuga@gmail.com",
+            "password": "$2b$10$Dp3dvshC45MQ49pZWJTkre8H/IXLlrNAya6qICapE.UuWKi6WOea.",
+            "is_admin": "no",
+            "status": "active",
+            "id": 8,
+            "random_reference": "s&2&bPj$ynRSe91"
+        },
+        {
+            "first_name": "F.",
+            "last_name": "RUGA",
+            "username": "charugaf@gmail.com",
+            "password": "$2b$10$fjUC0fX0.RX50Ywi2CV9EujcL/RiRFZ0A3AWTxUUwEQq1EHUlsDBu",
+            "is_admin": "no",
+            "status": "active",
+            "id": 9,
+            "random_reference": "P1cvomH8@JwlNuq"
+        },
+        {
+            "first_name": "M.",
+            "last_name": "RUGA",
+            "username": "charuggaf@gmail.com",
+            "password": "$2b$10$X0i6riUIJq1qconKkqJrHOXJlOU7glmObVnQMc.txTZmlkSjXcs0u",
+            "is_admin": "no",
+            "status": "active",
+            "id": 10,
+            "random_reference": "BzcdASKO@YEvRVJ"
+        },
+        {
+            "first_name": "M.",
+            "last_name": "Williams",
+            "username": "willaims@gmail.com",
+            "password": "$2b$10$GxZCs4L6xljWV8uvwLKqkexDkoQLSKtoCHMOIvt.sE5ovea3gIlie",
+            "is_admin": "no",
+            "status": "active",
+            "id": 11,
+            "random_reference": "ljb!kLl#YUHAJ&9"
+        },
+        {
+            "first_name": "M.",
+            "last_name": "Marks",
+            "username": "marks@gmail.com",
+            "password": "$2b$10$0H/TAQxaXZ7dllDlpZ6/ze1vJ6Kd0cm8hsXdw9/NdQf5IIbXJT0Xy",
+            "is_admin": "no",
+            "status": "active",
+            "id": 12,
+            "random_reference": "gQ8SYRtPqwrFYFd"
+        },
+        {
+            "first_name": "M.",
+            "last_name": "Phillips",
+            "username": "Philips@gmail.com",
+            "password": "$2b$10$7zRcERq5peNb6zAtZs8e7.OgXW7P1nUtGvP3KD7jHlm7lEzvxW2c6",
+            "is_admin": "no",
+            "status": "active",
+            "id": 13,
+            "random_reference": "CzJ8T&tkqQawdvD"
+        },
+        {
+            "first_name": "M.",
+            "last_name": "Marcus",
+            "username": "marcus@gmail.com",
+            "password": "$2b$10$tjiZie7bwNuv5Q2GK8LxEOGC6P9HsOl6YagKHi05P/QbujmOJYkB2",
+            "is_admin": "no",
+            "status": "active",
+            "id": 14,
+            "random_reference": "FkboMiqKeB758ut"
+        },
+        {
+            "first_name": "M.",
+            "last_name": "Lions",
+            "username": "lions1@gmail.com",
+            "password": "$2b$10$k2USKA9UCHUwK1koh8XXAOm7iwGNljLr8Qtns4DHxlV/QFCY0b2Pi",
+            "is_admin": "no",
+            "status": "active",
+            "id": 15,
+            "random_reference": "N@4woXmCLytDh$S"
+        },
+        {
+            "first_name": "Mathew",
+            "last_name": "NKUBA",
+            "username": "fezzopro1@gmail.com",
+            "password": "$2b$10$JWDt0bQOg1X3x6/HhWNkMeBWLHMwGlUMcoxrp5Zkrr6l/62vLv/Wi",
+            "is_admin": "no",
+            "status": "active",
+            "id": 15,
+            "random_reference": "4zY5RTE1t45Be5u",
+            "email": "fezzopro1@gmail.com"
+        },
+        {
             "first_name": "Felix",
             "last_name": "KAMANA",
-            "email": "fezzopro@gmail.com",
             "username": "fezzopro@gmail.com",
-            "password": "123",
+            "password": "$2b$10$0EvLt6TuqoEnjorp/D.Wkunl0akT3KyKSw08K76jXWapxQ6TPHWq2",
             "is_admin": "yes",
-            "status": "active"
-        },
-        {
-            "id": "2",
-            "first_name": "Mike",
-            "last_name": "BIZIMANA",
-            "email": "mikebiz@gmail.com",
-            "username": "mikebiz@gmail.com",
-            "password": "1234",
-            "is_admin": "no",
-            "status": "active"
-        },
-        {
-            "id": "3",
-            "first_name": "Sonia",
-            "last_name": "MUTESI",
-            "email": "mutes@gmail.com",
-            "username": "mutes@gmail.com",
-            "password": "12345",
-            "is_admin": "no",
-            "status": "active"
-        },
-        {
-            "first_name": "Aphrodice",
-            "last_name": "IRYIVUZE",
-            "email": "iryiri@gmail.com",
-            "username": "iryiri@gmail.com",
-            "password": "1234",
-            "is_admin": "no",
             "status": "active",
-            "id": 4
-        },
-        {
-            "first_name": "Jules",
-            "last_name": "UWINEZA",
-            "email": "jules@gmail.com",
-            "username": "jules@gmail.com",
-            "password": "1234",
-            "is_admin": "no",
-            "status": "active",
-            "id": 7
-        },
-        {
-            "first_name": "paste",
-            "last_name": "MUKAMA",
-            "username": "pmukam32@gmail.com",
-            "email": "pmukam32@gmail.com",
-            "password": "1234675",
-            "is_admin": "no",
-            "status": "active",
-            "id": 6
+            "email": "fezzopro@gmail.com",
+            "id": 10,
+            "random_reference": "#y*7Gw2k4My&hFH"
         }
     ],
     "bookings": [
@@ -71,7 +113,8 @@
                 "seat_number": "7",
                 "status": "confirmed",
                 "status_updated_at": "0000-00-00 00-00-00",
-                "refundable": "no"
+                "refundable": "no",
+                "random_refferance": "#huj1t!oADU!&#0"
             }
         },
         {
@@ -83,7 +126,8 @@
                 "seat_number": "17",
                 "status": "canceled",
                 "status_updated_at": "2019-06-20 12-50-32",
-                "refundable": "yes"
+                "refundable": "yes",
+                "random_refferance": "mNXkmh8IKjqAEK5"
             }
         },
         {
@@ -95,7 +139,8 @@
                 "seat_number": "12",
                 "status": "confirmed",
                 "status_updated_at": "0000-00-00 00-00-00",
-                "refundable": "no"
+                "refundable": "no",
+                "random_refferance": "I#u*aPL6XB3dC&G"
             }
         },
         {
@@ -107,7 +152,8 @@
                 "seat_number": "12",
                 "status": "confirmed",
                 "status_updated_at": "0000-00-00 00-00-00",
-                "refundable": "no"
+                "refundable": "no",
+                "random_refferance": "j5*wniXn$gXbTK5"
             }
         }
     ],
@@ -120,7 +166,8 @@
             "destination": "Kibungo",
             "trip_date": "2019-07-20",
             "fare": "2500.25",
-            "status": "Active"
+            "status": "Active",
+            "random_refferance": "@t9dzuL1!eKOoJs"
         },
         {
             "id": "2",
@@ -130,17 +177,60 @@
             "destination": "kigali",
             "trip_date": "2019-07-20",
             "fare": "2500.25",
-            "status": "Active"
+            "status": "Active",
+            "random_refferance": "aDNJbfC1e5c40Wn"
         },
         {
-            "id": "1",
+            "id": "3",
             "seats_capacity": "20",
             "bus_license_number": "RAD687D",
             "origin": "Butare",
             "destination": "Kigali",
             "trip_date": "2019-07-20",
             "fare": "2500.25",
-            "status": "Active"
+            "status": "Active",
+            "random_refferance": "WGhKfv6JUx!d7EF"
+        },
+        {
+            "id": 4,
+            "seats_capacity": "30",
+            "bus_license_number": "RAC5105F",
+            "origin": "Kigali",
+            "destination": "Rubavu",
+            "trip_date": "2019-07-20",
+            "fare": "2500.25",
+            "status": "Active",
+            "random_refferance": "I$oGXC5bIPrYZm$"
+        },
+        {
+            "id": 5,
+            "seats_capacity": "30",
+            "bus_license_number": "RAC5105F",
+            "origin": "rubavu",
+            "destination": "kigali",
+            "trip_date": "2019-07-21",
+            "fare": "2500.25",
+            "status": "Active",
+            "random_refferance": "6$Wn1jDTwWJyKP#"
+        },
+        {
+            "id": 6,
+            "seats_capacity": "30",
+            "bus_license_number": "RAC5105F",
+            "origin": "rubavu",
+            "destination": "Musanze",
+            "trip_date": "2019-07-21",
+            "fare": "2500.25",
+            "status": "Active",
+            "random_reference": "ZqQ!dunu$uFNex3"
+        }
+    ],
+    "cars": [
+        {
+            "plate": "RAC525D"
+        },
+        {
+            "plate": "RAB004A"
         }
     ]
 }
