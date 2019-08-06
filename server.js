@@ -39,7 +39,7 @@ app.get("/index", (request, response) =>{
     response.sendFile("index.html",{root: path.join(__dirname, './views')});
 });
 app.get("/signin", (request, response) =>{
-    response.sendFile("index.html",{root: path.join(__dirname, './views')});
+    response.sendFile("signin.html",{root: path.join(__dirname, './views')});
 });
 app.get("/sign-up", (request, response) =>{
     response.sendFile("sign-up.html",{root: path.join(__dirname, './views')});
