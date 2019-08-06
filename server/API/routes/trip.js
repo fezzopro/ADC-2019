@@ -14,16 +14,16 @@ route.post("/",(request, response, next)=>{
     if (results.status) {
         // check if a trip already Exists
         if(WayFarer.tripExist(request.body)){
-            response.status(200).json({status:"Failed", message:"Trip Already Exists"});
+            response.status(409).json({status:409, message:"Trip Already Exists"});
         }else{
             if (WayFarer.createTrip(request.body)) {
-                response.status(201).json({status:"success",data: request.body});
+                response.status(201).json({status:201,data: request.body});
             } else {
-                response.status(201).json({status:"Failed",message: "Unable To save Your trip. Please try again later"});
+                response.status(201).json({status:200,message: "Unable To save Your trip. Please try again later"});
             }
         }
     }else{
-        response.status(401).json({error: "Incomplete or Empty data",data:results.data});
+        response.status(401).json({status:401, error: "Incomplete or Empty data",data:results.data});
     }
     response.end();
 });
