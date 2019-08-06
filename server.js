@@ -1,7 +1,5 @@
 const express = require("express");
 const path = require("path");
-// const bodyParser = require("body-parser");
-// const WayFarer = require("./server/controller/wayfarer");
 const app = require("./server/routes/routes");
 
 // Make our html pages available for express to use available 
@@ -74,5 +72,4 @@ const port = process.env.PORT || 8000;
 // Starting the server on port 8000
 const server = app.listen(port, () =>{
     console.log(`Listening on port ${server.address().port}...`);
-    // console.log(__dirname, __filename);
 });
