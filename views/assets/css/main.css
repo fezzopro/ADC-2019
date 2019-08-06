@@ -118,7 +118,7 @@ body{
 	position: absolute;
 }
 .dropdown-left a {
-	color: #57595af0 !important;
+	/* color: #57595af0 !important; */
 	font-size: 14px;
 	font-weight: 600;
 }
@@ -270,6 +270,10 @@ tr:hover{background-color:#f5f5f5;}
 	background: linear-gradient(135deg, #ff516b 0%,#826cfd 100%);
 	box-shadow: 16px 20px 16px 3px rgba(0, 0, 0, 0.42);
 	padding: 1%;
+	font-size: initial;
+	font-style: normal;
+    font-family: sans-serif;
+    color: white;
 }
 .sign-in-button{
 	background-color: transparent;
@@ -448,11 +452,12 @@ div.home-below-top-boxes{
 }
 div.below-boxes.grid p{
 	text-align: center;
-	text-size-adjust: 100%;
-    font-size: 18px;
+    text-size-adjust: 100%;
+    font-size: 20px;
     margin-bottom: 0px;
-    font-weight: 100;
+    font-weight: 600;
     font-style: italic;
+    margin-bottom: 20px;
 }
 div.below-boxes.grid p span{
 	font-size: 14px;
