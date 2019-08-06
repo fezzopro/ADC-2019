@@ -1,2 +1,9 @@
 trip creation information
-node_modules
+node_modules/
+spec/
+.eslintrc.js
+.travis.yml
+app.js
+package-lock.json
+package.json
+server.js

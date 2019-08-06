@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=divice-width, initial-scale=1, shrink-to-fit=no">
+	<title>ADC Way Farer</title>
+	<link rel="stylesheet" type="text/css" href="assets/assets/css/main.css">
+</head>
+<body>
+	<!-- The Whole Site wrapper  -->
+	<div class="wrapper grid">
+		<!-- The Whole Site content container -->
+		<div class=" grid">
+			<!-- 90% of the remaining  -->
+			<div class="container-login grid">
+				<!-- Left navigation section div -->
+				<!-- Site middle content container -->
+				<div class="content grid">
+					<div class="login-content grid">
+						<div ></div>
+						<div class="login-head">
+							<h2></h2>
+							<div class="text-center">
+								<img src="assets/assets/img/login_user.png">
+							</div>
+						</div>
+						<div class="grid login-body grid-login-body text-center">
+							<form action="/auth/signup" method="post">
+									<div>
+										<div class="text-center">
+											<!-- <img src="assets/assets/img/login_user.png"> -->
+										</div>
+										<table class="sign-in">
+											<tr>
+												<th class="text-center" colspan="2">Create Account</th>
+											</tr>
+											<tr>
+												<td>
+													<label for="fname">First Name</label>
+													<input type="text" id="fname" name="fname">
+												</td>
+												<td>
+													<label for="lname">Last Name</label>
+													<input type="text" id="lname" name="lname">
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<label for="email">Email</label>
+													<input type="text" id="email" name="email">
+												</td>
+												<td>
+													<label for="dob">Date Of Birth</label>
+													<input type="date" id="dob" name="dob">
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<label for="username">Username</label>
+													<input type="text" id="username" name="username">
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<label for="password">Password</label>
+													<input type="password" id="password" name="password">
+												</td>
+												<td>
+													<label for="rpassword">Repeat Password</label>
+													<input type="password" id="rpassword" name="rpassword">
+												</td>
+											</tr>
+											<tr>
+												<td class="text-center" colspan="2"><!--<a href="home">--><button type="submit" class="sign-in-button text-center">Sign Up</button><!--</a>--></td>
+											</tr>
+										</table>
+									</div>
+							</form>
+							<div>Already have account? <span><a href="index">Sign In here</a></span></div>
+							<div></div>
+						</div>
+					</div>
+					<!-- site Footer division section-->
+					<div class="footer">
+						<p class="">
+	                      <strong> &copy; <span class="footer-date"></span> </strong> | This application is made by<strong class="text-dark"> K.Felix </strong> as ADC project. 
+	                    </p>
+					</div>
+					<!-- End of site footer division -->
+				</div>
+				<!-- End of middle site content container -->
+			</div>
+			<!-- End of 90% of the remaining -->
+		</div>
+	</div>
+	<script>
+		document.addEventListener('DOMContentLoaded',()=>{
+			document.querySelector('.footer-date').textContent = new Date().getFullYear();
+		});
+	</script>
+</body>
+</html>
