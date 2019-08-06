@@ -17,6 +17,19 @@ document.addEventListener('DOMContentLoaded',()=>{
 	    }
 	  }
 	});
+	document.getElementsByClassName('.sign-in-button').addEventListener('click', () =>{
+		event.defaultPrevented();
+		localStorage.setItem('is_admin',true);
+		alert('admin');
+		// console.log(localStorage.getItem('is_admin'));
+		
+	});
+	document.getElementsByClassName('.sign-up-button').addEventListener('click', () =>{
+		alert('user');
+		event.defaultPrevented();
+		localStorage.setItem('is_admin',false);
+		// console.log(localStorage.getItem('is_admin'));
+	});
 	document.querySelector('.footer-date').textContent = new Date().getFullYear();
 	// <script type="text/javascript">document.write(new Date().getFullYear());</script>
 });
