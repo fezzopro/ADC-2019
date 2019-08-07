@@ -1,6 +1,7 @@
 const express = require("express");
 const WayFarer = require("../../controller/wayfarer");
 const BodyChecker = require("../../helpers/requestBodies");
+const checkAuth = require("../../middlewares/check-auth");
 const route = express.Router();
 
 
@@ -8,7 +9,7 @@ const route = express.Router();
 // trip routes
 
 // Create trip
-route.post("/",(request, response, next)=>{
+route.post("/",checkAuth,(request, response, next)=>{
 
     let results = BodyChecker.checkCreateTripBody(request.body);
     if (results.status) {

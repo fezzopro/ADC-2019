@@ -19,12 +19,12 @@ route.post("/signin", (request, response, next) => {
         if (signinResponse.hasOwnProperty("status")) {
             if (signinResponse.status === "success") {
                 let token = jwt.sign({
-                    username: signinResponse.data.username,
+                    names: signinResponse.data.first_name + ' '+ signinResponse.data.last_name,
                     is_admin: signinResponse.data.is_admin,
                     random_reference: signinResponse.random_reference,
                     id: signinResponse.data.id
                 },
-                    process.env.JWT_KEY|| "SECRET",
+                    process.env.JWT_KEY,
                     { expiresIn: "1h" });
                 response.status(200).json({signinResponse, token});
             } else {

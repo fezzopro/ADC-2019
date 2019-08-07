@@ -26,7 +26,6 @@ class WayFarer {
     }
     signin(username, password){
         let userData = {};
-        console.log(password);
         
         this[fileContent].users.map((user)=>{
             if (user.username === username && this[bcrypt].compareSync(password,user.password)) {
@@ -34,7 +33,6 @@ class WayFarer {
                 userData.data= user;
             }
         });
-        console.log(userData);
         
         return userData;
     }
