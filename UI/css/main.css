@@ -17,7 +17,12 @@ body{
     grid-template-columns: 100%;
     grid-template-rows: 100%;
 }
-
+a{
+	text-decoration: none !important;
+}
+a:webkit-any-link{
+	text-decoration: none !important;
+}
 .wrapper {
 	background-color: #eee;
 	margin:  auto;
@@ -402,6 +407,9 @@ input, select{
 .top-boxes, .top-boxes1{
 	grid-template-columns: 25% 25% 25% 25%;
 	/*background-color: #ffd;*/
+}
+.top-boxes div a, .top-boxes1 div a{
+	text-decoration: none;
 }
 .top-boxes1 div{
 	display: grid;
