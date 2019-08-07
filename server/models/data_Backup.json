@@ -1,0 +1,102 @@
+{
+    "users":[
+        {
+            "id":"1",
+            "fname": "Felix",
+            "lname": "KAMANA",
+            "username": "fezzopro@gmail.com",
+            "password": "123",
+            "status":   "active"
+
+        },
+        {
+            "id":"2",
+            "fname": "Mike",
+            "lname": "BIZIMANA",
+            "username": "mikebiz@gmail.com",
+            "password": "1234",
+            "status":   "active"
+
+        },
+        {
+            "id":"3",
+            "fname": "Sonia",
+            "lname": "MUTESI",
+            "username": "mutes@gmail.com",
+            "password": "12345",
+            "status":   "active"
+
+        }
+
+    ],
+    "bookings":[
+        {
+            "id":"1",
+            "identification":{
+                "trip_id": "1",
+                "user_id": "1",
+                "created_on": "2019-07-20",
+                "seat_number": "7"
+            }
+        },
+        {
+            "id":2,
+            "identification":{
+                "trip_id": "1",
+                "user_id": "1",
+                "created_on": "2019-06-20",
+                "seat_number": "17"
+            }
+        },
+        {
+            "id":"3",
+            "identification":{
+                "trip_id": "2",
+                "user_id": "1",
+                "created_on": "2019-07-20",
+                "seat_number": "12"
+            }
+        },
+        {
+            "id":"4",
+            "identification":{
+                "trip_id": "3",
+                "user_id": "2",
+                "created_on": "2019-07-20",
+                "seat_number": "12"
+            }
+        }
+    ],
+    "trips":[
+        {
+            "id" : "1",
+            "seats_capacity" : "20",
+            "bus_license_number" : "RAD500D",
+            "origin" : "Kigali", 
+            "destination" : "Kibungo",
+            "trip_date" : "2019-07-20",
+            "fee" : "2500.25",
+            "status" : "Active"
+        },
+        {
+            "id" : "2",
+            "seats_capacity" : "20",
+            "bus_license_number" : "RAD787D",
+            "origin" : "kibumgo", 
+            "destination" : "kigali",
+            "trip_date" : "2019-07-20",
+            "fee" : "2500.25",
+            "status" : "Active"
+        },
+        {
+            "id" : "1",
+            "seats_capacity" : "20",
+            "bus_license_number" : "RAD687D",
+            "origin" : "Butare", 
+            "destination" : "Kigali",
+            "trip_date" : "2019-07-20",
+            "fare" : "2500.25",
+            "status" : "Active"
+        }
+    ]
+}

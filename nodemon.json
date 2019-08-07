@@ -1,0 +1,6 @@
+{
+    "env":{
+        "PORT": 8000,
+        "JWT_KEY": "#y*7Gw2k4My&hFH"
+    }
+}
