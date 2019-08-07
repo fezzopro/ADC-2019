@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+
 module.exports = (request, response, next)=>{
     try {
         let decodedToken = jwt.verify(request.headers.authorization.split(" ")[1],process.env.JWT_KEY);
