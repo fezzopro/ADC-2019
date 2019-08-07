@@ -1,13 +1,10 @@
-const express = require("express");
-const WayFarer = require("../../controller/wayfarer");
-// const BodyChecker = require("../../helpers/requestBodies");
-const user = require("../../controller/user");
-const route = express.Router();
 
-// User Authentication Routes
+const bcrypt = require("bcrypt");
+const WayFarer = require("../controller/wayfarer");
+const BodyChecker = require("../helpers/requestBodies");
+const tokenized = require("../helpers/generateToken");
 
-// Login endpoint
-route.post("/signin", (request, response, next) => {
+let signin = (request, response, next) => {
 
     let results = BodyChecker.checkSignInBody(request.body);
 
@@ -17,17 +14,8 @@ route.post("/signin", (request, response, next) => {
 
         if (signinResponse.hasOwnProperty("status")) {
             if (signinResponse.status === "success") {
-                let token = jwt.sign({
-                    username: signinResponse.data.username,
-                    is_admin: signinResponse.data.is_admin,
-                    random_reference: signinResponse.random_reference,
-                    id: signinResponse.data.id
-                },
-                    process.env.JWT_KEY|| "SECRET",
-                    { expiresIn: "1h" });
-                    signinResponse.status = 200;
-                    signinResponse.token = token;
-                response.status(200).json(signinResponse);
+                let token = tokenized(signinResponse);
+                response.status(200).json({ status:200, signinResponse, token });
             } else {
                 // Unauthorized 
                 response.status(401).json({ status: 401, message: "Incorect Username Or Password" });
@@ -37,13 +25,12 @@ route.post("/signin", (request, response, next) => {
         }
 
     } else {
-        response.status(200).json({ status: 422, message: "Fill All The Fields", data: results.data });
+        response.status(200).json({ status: 200, message: "Fill All The Fields", data: results.data });
     }
     response.end();
-});
+};
 
-// Create Account Endpoint
-route.post("/signup", (request, response, next) => {
+let signup = (request, response, next) => {
 
     bodyData = request.body;
     let results = BodyChecker.checkSignUpBody(bodyData);
@@ -55,6 +42,11 @@ route.post("/signup", (request, response, next) => {
             bodyData.email = bodyData.username;
             bodyData.password = bcrypt.hashSync(bodyData.password, bcrypt.genSaltSync(10));
             if (WayFarer.signup(bodyData)) {
+
+                let token = tokenized({data:bodyData});
+                // response.status(200).json({ signinResponse, token });
+
+                bodyData.token = token
                 response.status(201).json({ status: 201, data: bodyData });
             } else {
                 response.status(200).json({ status: 200, message: "Unable To save Your account. Please try again later" });
@@ -62,12 +54,9 @@ route.post("/signup", (request, response, next) => {
             response.end();
         }
     } else {
-        response.status(401).json({status:401, error: "Uncomplete or Empty data", data: results.data });
+        response.status(401).json({ status:401, error: "Uncomplete or Empty data", data: results.data });
     }
     response.end();
-});
+};
 
-// Create Account Endpoint
-route.post("/signup", user.signup);
-
-module.exports = route;
+module.exports = { signin, signup };
