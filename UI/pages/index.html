@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=divice-width, initial-scale=1, shrink-to-fit=no">
+    <title>ADC Way Farer</title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body>
+    <div class="grid wrapper">
+        <div class="index-container grid text-center">
+            <div></div>
+            <div></div>
+            <div class="index-content2">
+                <div><img src="../img/slider1.jpg" class="slider1"></div>
+            </div>
+            <div class="dark-20 grid">
+                <div class="top-boxes1 grid">
+                            <div class="box1">
+                                <a href="signin.html">
+                                    <div class="title">
+                                        <div>
+                                            <h2>KIGALI-RUBAVU</h2>
+                                        </div>
+                                        <!-- <span class="title-icon"><img src="../img/home.png"></span> -->
+                                    </div>
+                                    <a href="signin.html" class="grid">
+                                        <span>&nbsp;</span>
+                                        <span>BOOK A TRIP</span>
+                                            <span class="end-icons"><img src="../img/next1.png"></span>
+                                    </a>
+
+                                </a>
+                            </div>
+                            <div class="box2">
+                                <a href="">
+
+                                    <div class="title">
+                                        <div>
+                                            <h2>MUSANZE-RUBAVU</h2>
+                                        </div>
+                                        <span class="title-icon"><img src="../img/dashboard-icon1.png"></span>
+                                    </div>
+                                    <a href="signin.html" class="grid">
+                                        <span>&nbsp;</span>
+                                        <span>BOOK A TRIP</span>
+                                                <span class="end-icons"><img src="../img/next1.png"></span>
+                                    </a>
+                                </a>
+                            </div>
+                            <div class="box3">
+                                <a href="signin.html">
+                                    <div class="title">
+                                        <div>
+                                            <h2>KIGALI-CYANGUGU</h2>
+                                        </div>
+                                        <span class="title-icon"><img src="../img/ok1.png"></span>
+                                    </div>
+                                    <a href="signin" class="grid">
+                                        <span>&nbsp;</span>
+                                        <span>BOOK A TRIP</span>
+                                            <span class="end-icons"><img src="../img/next1.png"></span>
+                                    </a>
+
+                                </a>
+                            </div>
+                            <div class="box4">
+                                <a href="">
+                                    <div class="title">
+                                        <div>
+                                            <h2>MUTARA-RUBAVU</h2>
+                                        </div>
+                                        <span class="title-icon"><img src="../img/cancel1.png"></span>
+                                    </div>
+                                    <a href="signin.html" class="grid">
+                                        <span>&nbsp;</span>
+                                        <span>BOOK A TRIP</span>
+                                            <span class="end-icons"><img src="../img/next1.png"></span>
+                                    </a>
+
+                                </a>
+                            </div>
+                        </div>
+            </div>
+            <div class="dark-10">
+                <p class="">
+                    <strong> &copy; <span class="footer-date"></span> </strong> | This application is designed by<strong
+                        class="text-dark"> K.Felix </strong> as ADC project.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.footer-date').textContent = new Date().getFullYear();
+        });
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</body>
+
+</html>

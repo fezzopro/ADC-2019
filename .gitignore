@@ -1,6 +1,7 @@
 trip creation information
 node_modules/
 spec/
+olds/
 .eslintrc.js
 .travis.yml
 app.js
