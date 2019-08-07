@@ -2,4 +2,5 @@ trip creation information
 node_modules/
 views/
 olds/
+views/
 npm-debug.log
