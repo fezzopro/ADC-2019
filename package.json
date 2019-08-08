@@ -7,7 +7,8 @@
     "test-init": "./node_modules/jasmine/bin/jasmine.js init",
     "test": "./node_modules/jasmine/bin/jasmine.js",
     "start": "node server.js",
-    "preinstall": "npm config set package-lock false"
+    "preinstall": "npm config set package-lock false",
+    "freshtall": "rm -rf node_modules && rm -rf package-lock.json && npm install"
   },
   "repository": {
     "type": "git",
