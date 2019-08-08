@@ -1,7 +1,7 @@
 const request = require("request");
 const app = require("../server/controller/wayfarer");
 const routes = require("../server");
-const baseUrl = "http://localhost:8000/";
+const baseUrl = process.env.BASE_URL || "http://localhost:8000/";
 
 describe("SERVER", () => {
     let server;
