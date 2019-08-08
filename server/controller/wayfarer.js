@@ -212,7 +212,7 @@ class WayFarer {
             if (finalBookingResults.length > 0) {
                 return { status: 302, message: "success", data: finalBookingResults };
             } else {
-                return { status: 404, message: "Empty Results", data: finalBookingResults };
+                return { status: 404, message: "No Results", data: finalBookingResults };
             }
         } else {
             let singleBookingObject = [];
@@ -228,7 +228,7 @@ class WayFarer {
                 return { status: 302, message: "success", data: singleBookingObject };
 
             } else {
-                return { status: 404, message: "Empty Results", data: singleBookingObject };
+                return { status: 404, message: "No Results", data: singleBookingObject };
 
             }
         }
