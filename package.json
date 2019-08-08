@@ -9,7 +9,6 @@
     "start": "node server.js",
     "preinstall": "npm config set package-lock false",
     "freshtall": "rm -rf node_modules && rm -rf package-lock.json && npm install"
-    "start": "node server.js"
   },
   "repository": {
     "type": "git",
