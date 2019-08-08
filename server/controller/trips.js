@@ -31,7 +31,7 @@ let create = (request, response, next) => {
 
 let viewAllTrip = (request, response, next) => {
     let trips = WayFarer.viewTrip();
-    response.status(200).json(trips);
+    response.status(trips.status).json(trips);
 };
 
 let specificTrip = (request, response, next) => {
