@@ -28,7 +28,7 @@ class WayFarer {
         let userData = {};
 
         this[fileContent].users.map((user) => {
-            if (user.username === username && this[bcrypt].compareSync(password, user.password)) {
+            if (user.status === 'active' && user.username === username && this[bcrypt].compareSync(password, user.password)) {
                 userData.status = "success";
                 userData.data = user;
             }
@@ -58,6 +58,7 @@ class WayFarer {
     userExist(username) {
         let results = false;
         this[fileContent].users.map(individualUser => {
+
             if (individualUser.username === username) {
                 results = true;
             }
@@ -79,7 +80,6 @@ class WayFarer {
     }
     createTrip(data, user_id) {
         // Write on the file information about the trip
-        console.log(data);
 
         let result = true;
         let allTrips = this[fileContent].trips;
@@ -101,66 +101,196 @@ class WayFarer {
     cancelTrip(userId = this.userId, tripId) {
         // 
     }
-    viewTrip(userId = this.userId, tripId = 'all') {
+    viewTrip(tripId = 'all') {
         if (tripId === 'all') {
-            return { status: 200, message: "success", data: this[fileContent].trips };
+            let allTripsObject = [];
+            this[fileContent].trips.map(singleTrip => {
+
+                if (singleTrip.status === 'Active')
+                    allTripsObject.push(singleTrip);
+            });
+            if (allTripsObject.length > 0) {
+                return { status: 302, message: "success", data: allTripsObject };
+            } else {
+                return { status: 404, message: "No Trips Found", data: allTripsObject };
+            }
         } else {
             let singleTripObject = [];
             this[fileContent].trips.map(singleTrip => {
-                if (singleTrip.id === tripId) {
+                
+                if (!isNaN(tripId) && singleTrip.id === tripId && singleTrip.status === 'Active') {
                     singleTripObject.push(singleTrip);
+                }else{
+                    // bad request
                 }
             });
+            console.log(singleTripObject);
             if (singleTripObject.length > 0) {
-                return { status: 302, message: "success", data: singleTripObject };
-
+                return singleTripObject;
             } else {
-                return { status: 404, message: "success", data: singleTripObject };
-
+                return singleTripObject;
             }
         }
     }
+    getBookings(userId, tripId) {
+        // console.log(tripId, userId);
+
+        let singleTripObject = [];
+        this[fileContent].trips.map(singleTrip => {
+
+            if (singleTrip.id == tripId && singleTrip.status == 'Active') {
+                singleTripObject.push(singleTrip);
+            }
+        });
+        if (singleTripObject.length > 0) {
+            // console.log(singleTrip);
+            return singleTripObject;
+        } else {
+            return singleTripObject;
+        }
+    }
+
     // Create a booking
-    BookTrip(userId = this.userId, is_admin = false) {
+    BookTrip(user, tripId, seatNumber = "") {
+        let bookings = this[fileContent].bookings
+        let foundBookings = []
+        bookings.map(singleBooking => {
+            if (singleBooking.identification.trip_id == tripId && singleBooking.identification.user_id == user.id) {
+                foundBookings.push(singleBooking);
+            }
+        });
+
+        if (foundBookings.length > 0) {
+            return { status: 409, message: "already exists" };
+        } else {
+            let data = this.getBookings(user.id, tripId)[0];
+            let myTrip = {};
+            myTrip.id = this[fileContent].bookings.length + 1
+            myTrip.identification= {
+                trip_id: tripId,
+                user_id: user.id,
+                created_on: `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate()} ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getMinutes()}`,
+                seat_number: seatNumber,
+                status: "confirmed",
+                status_updated_at: "0000-00-00 00-00-00",
+                refundable: "no",
+                random_refferance: this[Helper].randomString()
+            };
+
+            this[fileContent].bookings.push(myTrip);
+
+            this[fs].writeFileSync(this[fileLocation], JSON.stringify(this[fileContent]), 'utf8', (error) => {
+                if (!error) {
+                    result = true;
+                } else {
+                    result = false;
+                    console.log(error);
+                    throw error;
+                }
+            });
+            return { status: 201, message: "You booked a seat saccessfully", data:myTrip }
+        }
 
     }
+
     // View a booking
     viewBooking(user, bookingId = 'all', is_admin = false) {
+        console.log(user);
+        
         let finalBookingResults = [];
-        if (bookingId === 'all') {
+        if (bookingId == 'all') {
             let allBookings = this[fileContent].bookings;
             allBookings.map(singleBooking => {
-                
-                if (singleBooking.identification.user_id === user.id)
-                    console.log(user);
+                // console.log(user.is_admin === 'false');
+                if (user.is_admin === true) {
                     finalBookingResults.push(singleBooking);
+                } else if (singleBooking.identification.user_id === user.id) {
+                    finalBookingResults.push(singleBooking);
+                }
             });
 
             if (finalBookingResults.length > 0) {
-                return { status: "success", data: finalBookingResults };
+                return { status: 302, message: "success", data: finalBookingResults };
             } else {
-                return { status: "Empty Results", data: finalBookingResults };
+                return { status: 404, message: "Empty Results", data: finalBookingResults };
             }
-
         } else {
             let singleBookingObject = [];
             this[fileContent].bookings.map(singleBooking => {
-                if (singleBooking.id === bookingId) {
+
+                if (singleBooking.id == bookingId && user.is_admin) {
+                    singleBookingObject.push(singleBooking);
+                } else if (singleBooking.id == bookingId && singleBooking.identification.user_id === user.id) {
                     singleBookingObject.push(singleBooking);
                 }
             });
             if (singleBookingObject.length > 0) {
-                return { status: "success", data: singleBookingObject };
+                return { status: 302, message: "success", data: singleBookingObject };
 
             } else {
-                return { status: "Empty Results", data: singleBookingObject };
+                return { status: 404, message: "Empty Results", data: singleBookingObject };
 
             }
         }
     }
-    deleteBooking(userId = this.userId, bookingId = 'all') {
 
+    deleteBooking(user, bookingId) {
+
+        let bookings = this[fileContent].bookings;
+        let response = {};
+        this[fileContent].bookings.map(singleBooking => {
+
+            if (singleBooking.id == bookingId && user.id == singleBooking.identification.user_id) {
+                if (delete bookings[bookings.indexOf(singleBooking)]) {
+                    this[fileContent].bookings.pop();
+                    console.log(this[fileContent].bookings);
+                    this[fs].writeFileSync(this[fileLocation], JSON.stringify(this[fileContent]), 'utf8', (error) => {
+                        if (error) {
+                            console.log(error);
+                            throw error;
+                        }
+                    });
+                    response = { status: 202, message: "Booking Deleted Successfully" };
+                } else {
+                    response = { status: 500, message: "Booking Could'n be deleted" };
+                }
+            } else {
+                console.log({ status: 404, message: "No Booking To Delete" });
+                response = { status: 404, message: "Booking is not your to delete" };
+            }
+
+        });
+        return response;
     }
+    CancelTrip(user, bookingId) {
+
+        let bookings = this[fileContent].bookings;
+        let response = {};
+        this[fileContent].bookings.map(singleBooking => {
+
+            if (singleBooking.id == bookingId && user.id == singleBooking.identification.user_id) {
+                if (delete bookings[bookings.indexOf(singleBooking)]) {
+                    this[fileContent].bookings.pop();
+                    console.log(this[fileContent].bookings);
+                    this[fs].writeFileSync(this[fileLocation], JSON.stringify(this[fileContent]), 'utf8', (error) => {
+                        if (error) {
+                            console.log(error);
+                            throw error;
+                        }
+                    });
+                    response = { status: 202, message: "Booking Deleted Successfully" };
+                } else {
+                    response = { status: 500, message: "Booking Could'n be deleted" };
+                }
+            } else {
+                console.log({ status: 404, message: "No Booking To Delete" });
+                response = { status: 404, message: "Booking is not your to delete" };
+            }
+
+        });
+        return response;
+    }
+
     logout(userId) {
         this.userId = userId;
         this.userId = null;

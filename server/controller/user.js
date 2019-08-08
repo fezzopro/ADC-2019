@@ -46,8 +46,12 @@ let signup = (request, response, next) => {
                 let token = tokenized({data:bodyData});
                 // response.status(200).json({ signinResponse, token });
 
-                bodyData.token = token
-                response.status(201).json({ status: 201, data: bodyData });
+                bodyData.token = token;
+                // bodyData.remove("password");
+                // bodyData.remove("random_reference");
+                let {password,random_reference, ...data} =bodyData;
+                
+                response.status(201).json({ status: 201, message:"Your Account has been Created successfully", data: data });
             } else {
                 response.status(200).json({ status: 200, message: "Unable To save Your account. Please try again later" });
             }

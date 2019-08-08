@@ -11,10 +11,11 @@ app.use(express.json());
 
 // Creating and points
 app.get("/", (request, response, next) =>{
-    response.sendFile("index.html",{root: path.join(__dirname, './views')});
+    // response.sendFile("index.html",{root: path.join(__dirname, './views')});
+    response.send(response.statusCode);
 });
 app.get("/index", (request, response, next) =>{
-    response.sendFile("index.html",{root: path.join(__dirname, './views')});
+    // response.sendFile("index.html",{root: path.join(__dirname, './views')});
 });
 app.get("/signin", (request, response, next) =>{
     response.sendFile("index.html",{root: path.join(__dirname, './views')});
