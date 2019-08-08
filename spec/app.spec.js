@@ -27,22 +27,22 @@ describe("Check the authantication  API/V1/auth/signup", () => {
 
     });
 });
-describe("Testing API/V1/trips", () => {
-    it("Check The unauthorized creation of trips", (done) => {
-        request.post({ url: baseUrl + 'API/V1/trips' }, (error, response, body) => {
-            console.log(body);
-            done();
+// describe("Testing API/V1/trips", () => {
+//     it("Check The unauthorized creation of trips", (done) => {
+//         request.post({ url: baseUrl + 'API/V1/trips' }, (error, response, body) => {
+//             console.log(body);
+//             done();
 
-        });
-    });
-    it("check the username", (done) => {
-        request.get({ url: baseUrl + 'API/V1/trips/' }, (error, response, body) => {
-            expect(JSON.parse(body).status).toBe(401);
-            console.log(body);
-            done();
-        });
-    });
-});
+//         });
+//     });
+//     it("check the username", (done) => {
+//         request.get({ url: baseUrl + 'API/V1/trips/' }, (error, response, body) => {
+//             expect(JSON.parse(body).status).toBe(401);
+//             console.log(body);
+//             done();
+//         });
+//     });
+// });
 // describe("Addition Function", () => {
 
 //     describe("Functions Related To User Authentication", () => {
