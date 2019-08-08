@@ -31,7 +31,7 @@ let create = (request, response, next) => {
 
 let viewAllTrip = (request, response, next) => {
     let trips = WayFarer.viewTrip();
-    response.status(200).json(trips);
+    response.status(trips.status).json(trips);
 };
 
 let specificTrip = (request, response, next) => {
@@ -46,7 +46,7 @@ let specificTrip = (request, response, next) => {
             response.status(302).json({ status: 302, message: "Data found", data: trips });
 
         } else {
-            response.status(404).json({ status: 404, message: "Empty Results", data: trips });
+            response.status(404).json({ status: 404, message: "No Results Found", data: trips });
         }
 
     }
