@@ -6,7 +6,7 @@
   "scripts": {
     "test-init": "./node_modules/jasmine/bin/jasmine.js init",
     "test": "nyc ./node_modules/jasmine/bin/jasmine.js",
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "preinstall": "npm config set package-lock false",
     "freshtall": "rm -rf node_modules && rm -rf package-lock.json && npm install"
