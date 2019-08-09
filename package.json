@@ -7,7 +7,7 @@
     "test-init": "./node_modules/jasmine/bin/jasmine.js init",
     "test": "./node_modules/jasmine/bin/jasmine.js",
     "start": "nodemon server.js",
-    "test:coveralls":"istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "coveralls":"nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "preinstall": "npm config set package-lock false",
     "freshtall": "rm -rf node_modules && rm -rf package-lock.json && npm install"
   },
