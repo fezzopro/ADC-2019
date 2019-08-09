@@ -255,8 +255,7 @@ class WayFarer {
                     response = { status: 500, message: "Booking Could'n be deleted" };
                 }
             } else {
-                console.log({ status: 404, message: "No Booking To Delete" });
-                response = { status: 404, message: "Booking is not your to delete" };
+                response = { status: 404, message: "You can't perform this action" };
             }
 
         });
