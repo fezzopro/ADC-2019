@@ -6,7 +6,7 @@
   "scripts": {
     "test-init": "./node_modules/jasmine/bin/jasmine.js init",
     "test": "./node_modules/jasmine/bin/jasmine.js",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "preinstall": "npm config set package-lock false",
     "freshtall": "rm -rf node_modules && rm -rf package-lock.json && npm install"
   },
@@ -23,15 +23,16 @@
   "homepage": "https://github.com/fezzopro/ADC-2019/readme",
   "devDependencies": {
     "body-parser": "^1.19.0",
+    "coveralls": "^3.0.6",
     "eslint": "^6.0.1",
     "jasmine": "^3.4.0",
     "nodemon": "^1.19.1",
     "request": "^2.88.0"
   },
   "dependencies": {
-    "nodemon": "^1.19.1",
     "bcrypt": "^3.0.6",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^1.19.1"
   }
 }
