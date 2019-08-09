@@ -1,6 +1,3 @@
-const Coveralls = require ('coveralls');
-Coveralls.wear;
-// Coveralls.wear!;
 const request = require("request");
 // const app = require("../server/controller/wayfarer");
 const routes = require("../server");
@@ -9,6 +6,7 @@ const baseUrl = process.env.BASE_URL || "http://localhost:8000/";
 
 describe("SERVER", () => {
     let server;
+    let
     beforeAll(() => {
         console.log(process.env.JWT_KEY)
         server = require("../server")
