@@ -1,8 +1,17 @@
 const request = require("request");
 // const app = require("../server/controller/wayfarer");
 const routes = require("../server");
+const generateToken = require("../server/helpers/generateToken");
 const baseUrl = process.env.BASE_URL || "http://localhost:8000/";
+process.env.JWT_KEY = "#y*7Gw2k4My&hFH";
 
+let faketoken = "Bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lcyI6IkdpbGRhcyBNYXJrIiwiaXNfYWRtaW4iOmZhbHNlLCJpZCI6MTIsImlhdCI6MTU2NTMxMjYwMSwiZXhwIjoxNTY1MzE2MjAxfQ.TfdxP2ca_tDk12A6-NHUEtR9rcoC1IVR7MnFEfzgEf4";
+let realtoken = generateToken(data={
+    first_name: "Charles",
+    is_admin: false,
+    random_reference: "s&2&bPj$ynRSe91",
+    id: 8
+});
 
 describe("SERVER", () => {
     let server;
@@ -22,7 +31,7 @@ describe('POST /auth/signup', () => {
 });
 // Testing Authentication API endpoints Signin Endpoint
 describe("Check the authantication  API/V1/auth/sigin", () => {
-    it("check the username", (done) => {
+    it("check the signin response status", (done) => {
         let dummyData = {
             "username": "123556462575861@gmail.com",
             "password": "123"
@@ -34,10 +43,9 @@ describe("Check the authantication  API/V1/auth/sigin", () => {
             body: JSON.stringify(dummyData)
         },
             (error, response, body) => {
-                console.log(process.env.JWT_KEY);
                 
                 console.log(body);
-                // expect(JSON.parse(body).status).toBe(401);
+                expect(JSON.parse(body).status).toBe(401);
             });
 
         done();
@@ -92,36 +100,35 @@ describe("Testing API/V1/trips", () => {
 
 // Testing Bookings API Endpoints
 
-describe("Testing Booking API End Point with Authentication /API/V1/bookings", () => {
-    let rightUser = {
-        "username": "123556462575861@gmail.com",
-        "password": "123"
-    };
-    let wrongUser = {
-        "username": "3556462575861@gmail.com",
-        "password": "123"
-    };
+// describe("Testing Booking API End Point with Authentication /API/V1/bookings", () => {
+//     let rightUser = {
+//         "username": "123556462575861@gmail.com",
+//         "password": "123"
+//     };
+//     let wrongUser = {
+//         "username": "3556462575861@gmail.com",
+//         "password": "123"
+//     };
 
 
-    it("Trying to book a seat with Authentication", (done) => {
-        done()
-    });
-    it("Trying to View All the bookings with Authentication", (done) => {
-        done()
-    });
-    it("Trying to View a specific booking with Authentication", (done) => {
-        done()
-    });
-    it("Trying to Delete a specific booking with Authentication", (done) => {
-        done()
-    });
-});
+//     it("Trying to book a seat with Authentication", (done) => {
+//         done()
+//     });
+//     it("Trying to View All the bookings with Authentication", (done) => {
+//         done()
+//     });
+//     it("Trying to View a specific booking with Authentication", (done) => {
+//         done()
+//     });
+//     it("Trying to Delete a specific booking with Authentication", (done) => {
+//         done()
+//     });
+// });
 
 describe("Running the tests for the API that Require authantacation before", () => {
     // Book a seat without authentication
     it("Trying to book a seat without Authentication POST /API/V1/bookings", (done) => {
         let dummyData = { "trip_id": 11 };
-        let faketoken = "Bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lcyI6IkdpbGRhcyBNYXJrIiwiaXNfYWRtaW4iOmZhbHNlLCJpZCI6MTIsImlhdCI6MTU2NTMxMjYwMSwiZXhwIjoxNTY1MzE2MjAxfQ.TfdxP2ca_tDk12A6-NHUEtR9rcoC1IVR7MnFEfzgEf4";
         request({
             url: baseUrl + 'API/V1/bookings',
             method: 'POST',
@@ -137,13 +144,13 @@ describe("Running the tests for the API that Require authantacation before", () 
         });
         done()
     });
-    it("Trying to View All the bookings without Authentication", (done) => {
-        done()
-    });
-    it("Trying to View a specific booking without Authentication", (done) => {
-        done()
-    });
-    it("Trying to Delete a specific booking without Authentication", (done) => {
-        done()
-    });
+    // it("Trying to View All the bookings without Authentication", (done) => {
+    //     done()
+    // });
+    // it("Trying to View a specific booking without Authentication", (done) => {
+    //     done()
+    // });
+    // it("Trying to Delete a specific booking without Authentication", (done) => {
+    //     done()
+    // });
 });
