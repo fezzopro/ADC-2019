@@ -6,12 +6,12 @@ const baseUrl = process.env.BASE_URL || "http://localhost:8000/";
 process.env.JWT_KEY = "#y*7Gw2k4My&hFH";
 
 let faketoken = "Bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lcyI6IkdpbGRhcyBNYXJrIiwiaXNfYWRtaW4iOmZhbHNlLCJpZCI6MTIsImlhdCI6MTU2NTMxMjYwMSwiZXhwIjoxNTY1MzE2MjAxfQ.TfdxP2ca_tDk12A6-NHUEtR9rcoC1IVR7MnFEfzgEf4";
-let realtoken = generateToken(data={
-    first_name: "Charles",
-    is_admin: false,
-    random_reference: "s&2&bPj$ynRSe91",
-    id: 8
-});
+// let realtoken = generateToken(data={
+//     first_name: "Charles",
+//     is_admin: false,
+//     random_reference: "s&2&bPj$ynRSe91",
+//     id: 8
+// });
 
 describe("SERVER", () => {
     let server;
@@ -44,7 +44,7 @@ describe("Check the authantication  API/V1/auth/sigin", () => {
         },
             (error, response, body) => {
                 
-                console.log(body);
+                // console.log(body);
                 expect(JSON.parse(body).status).toBe(401);
             });
 
