@@ -8,7 +8,7 @@
     "test": "nyc ./node_modules/jasmine/bin/jasmine.js",
     "start": "node server.js",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "preinstall": "npm config set package-lock false",
     "freshtall": "rm -rf node_modules && rm -rf package-lock.json && npm install"
   },
@@ -29,6 +29,7 @@
     "eslint": "^6.0.1",
     "jasmine": "^3.4.0",
     "nodemon": "^1.19.1",
+    "nyc": "^14.1.1",
     "request": "^2.88.0"
   },
   "dependencies": {
