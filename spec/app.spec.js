@@ -1,6 +1,7 @@
 const request = require("request");
 // const app = require("../server/controller/wayfarer");
 const routes = require("../server");
+const bodies = require("../server/helpers/requestBodies");
 const generateToken = require("../server/helpers/generateToken");
 const baseUrl = process.env.BASE_URL || "http://localhost:8000/";
 process.env.JWT_KEY = "#y*7Gw2k4My&hFH";
@@ -13,6 +14,7 @@ let faketoken = "Bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lcyI6IkdpbGRh
 //     id: 8
 // });
 
+
 describe("SERVER", () => {
     let server;
     beforeAll(() => {
@@ -23,6 +25,13 @@ describe("SERVER", () => {
         server.close();
     });
 });
+
+// deacribe("Testing the body contents",()=>{
+    // it("Check The signup bodyData",(done)=>{
+        
+    //     done();
+    // });
+// });
 
 // Testing Authentication API endpoints Signin Endpoint
 
