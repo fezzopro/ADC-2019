@@ -124,7 +124,7 @@ class WayFarer {
                     // bad request
                 }
             });
-            console.log(singleTripObject);
+            // console.log(singleTripObject);
             if (singleTripObject.length > 0) {
                 return singleTripObject;
             } else {
