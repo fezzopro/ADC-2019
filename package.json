@@ -8,7 +8,7 @@
     "test-init": "./node_modules/jasmine/bin/jasmine.js init",
     "test": "nyc ./node_modules/jasmine/bin/jasmine.js",
     "start": "node server.js",
-    "coveralls": "sudo npm test && nyc report --reporter=text-lcov | coveralls",
+    "coveralls": "npm test && nyc report --reporter=text-lcov | coveralls",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
 
   },
@@ -28,7 +28,6 @@
     "coveralls": "^3.0.6",
     "eslint": "^6.0.1",
     "jasmine": "^3.4.0",
-    "nodemon": "^1.19.1",
     "nyc": "^14.1.1",
     "request": "^2.88.0"
   },
