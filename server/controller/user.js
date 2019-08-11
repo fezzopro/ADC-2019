@@ -58,7 +58,7 @@ let signup = (request, response, next) => {
             response.end();
         }
     } else {
-        response.status(401).json({ status:401, error: "Uncomplete or Empty data", data: results.data });
+        response.status(401).json({ status:401,data: results.data });
     }
     response.end();
 };
