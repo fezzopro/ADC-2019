@@ -8,18 +8,15 @@ const route = express.Router();
 // trip routes
 
 // Create trip
-route.post("/",checkAuth, trips.create);
+route.post("/", checkAuth, trips.create);
 
 // Get all trips.
-route.get("/",checkAuth, trips.viewAllTrip);
+route.get("/", trips.viewAllTrip);
 
 // Get a specific trip.
-route.get("/:trip_id",checkAuth, trips.specificTrip);
+route.get("/:trip_id", trips.specificTrip);
 
 // Cancel a trip.
-route.patch("/:trip_id/cancel",(req, res, next)=>{
-    let trip_id = req.params.trip_id;
-    res.json({status:404, "message": "Nothing Yey"});
-});
+route.patch("/:trip_id/cancel", checkAuth, trips.cancelTrip);
 
 module.exports = route;
