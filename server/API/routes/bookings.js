@@ -5,9 +5,7 @@ const route = express.Router();
 
 // Book a seat on a trip
 
-route.post("/", (req, res, next)=>{
-
-})
+route.post("/",checkAuth, bookings.create);
 
 // View all bookings. An Admin can see all bookings, while user can see all of his/her bookings.
 

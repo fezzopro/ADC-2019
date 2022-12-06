@@ -4,9 +4,13 @@
   "description": "ADC Way Farer 2019",
   "main": "server.js",
   "scripts": {
+
     "test-init": "./node_modules/jasmine/bin/jasmine.js init",
-    "test": "./node_modules/jasmine/bin/jasmine.js",
-    "start": "nodemon server.js"
+    "test": "nyc ./node_modules/jasmine/bin/jasmine.js",
+    "start": "node server.js",
+    "coveralls": "npm test && nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+
   },
   "repository": {
     "type": "git",
@@ -20,15 +24,17 @@
   },
   "homepage": "https://github.com/fezzopro/ADC-2019/readme",
   "devDependencies": {
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.1",
+    "coveralls": "^3.0.6",
     "eslint": "^6.0.1",
     "jasmine": "^3.4.0",
-    "nodemon": "^1.19.1",
+    "nyc": "^14.1.1",
     "request": "^2.88.0"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1"
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^1.19.1"
   }
 }
