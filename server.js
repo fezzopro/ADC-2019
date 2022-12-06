@@ -11,44 +11,55 @@ app.use(express.json());
 
 // Creating and points
 app.get("/", (request, response, next) =>{
-    response.sendFile("index.html",{root: path.join(__dirname, './views')});
+    // response.sendFile("index.html",{root: path.join(__dirname, './views')});
+    response.send(response.statusCode);
 });
 app.get("/index", (request, response, next) =>{
-    response.sendFile("index.html",{root: path.join(__dirname, './views')});
+    // response.sendFile("index.html",{root: path.join(__dirname, './views')});
 });
 app.get("/signin", (request, response, next) =>{
-    response.sendFile("index.html",{root: path.join(__dirname, './views')});
+    // response.sendFile("index.html",{root: path.join(__dirname, './views')});
+    response.send(response.statusCode);
 });
 app.get("/sign-up", (request, response, next) =>{
-    response.sendFile("sign-up.html",{root: path.join(__dirname, './views')});
+    response.send(response.statusCode);
+    // response.sendFile("sign-up.html",{root: path.join(__dirname, './views')});
 });
 app.get("/home", (request, response, next) =>{
-    response.sendFile("home.html",{root: path.join(__dirname, './views')});
+    response.send(response.statusCode);
+    // response.sendFile("home.html",{root: path.join(__dirname, './views')});
 });
 app.get("/accountinfo", (request, response, next) =>{
-    response.sendFile("accountinfo.html",{root: path.join(__dirname, './views')});
+    response.send(response.statusCode);
+    // response.sendFile("accountinfo.html",{root: path.join(__dirname, './views')});
 });
 app.get("/allbooking", (request, response, next) =>{
-    response.sendFile("allbooking.html",{root: path.join(__dirname, './views')});
+    response.send(response.statusCode);
+    // response.sendFile("allbooking.html",{root: path.join(__dirname, './views')});
 });
 // View all bookings
 app.get("/booking", (request, response, next) =>{
-    response.sendFile("booking.html",{root: path.join(__dirname, './views')});
+    response.send(response.statusCode);
+    // response.sendFile("booking.html",{root: path.join(__dirname, './views')});
 });
 app.get("/alltrips", (request, response, next) =>{
-    response.sendFile("alltrips.html",{root: path.join(__dirname, './views')});
+    response.send(response.statusCode);
+    // response.sendFile("alltrips.html",{root: path.join(__dirname, './views')});
 });
 app.get("/createtrips", (request, response, next) =>{
-    response.sendFile("createtrips.html",{root: path.join(__dirname, './views')});
+    response.send(response.statusCode);
+    // response.sendFile("createtrips.html",{root: path.join(__dirname, './views')});
 });
 app.get("/canceltrips", (request, response, next) =>{
-    response.sendFile("canceltrips.html",{root: path.join(__dirname, './views')});
+    response.send(response.statusCode);
+    // response.sendFile("canceltrips.html",{root: path.join(__dirname, './views')});
 });
 app.get("/documentations", (request, response, next) =>{
 
 });
 app.get("/logout/", (request, response, next) =>{
-    response.sendFile("index.html",{root: path.join(__dirname, './views')});
+    response.send(response.statusCode);
+    // response.sendFile("index.html",{root: path.join(__dirname, './views')});
 });
 // If till here we didn't handle the request
 app.use((request, response, next)=>{
@@ -61,6 +72,7 @@ app.use((request, response, next)=>{
 app.use((error, request, response, next)=>{
     response.status(error.status || 500);
     response.json({
+        status: response.statusCode,
         error:{
             message: error.message
         }
